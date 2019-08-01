@@ -1,7 +1,7 @@
 var userScore = 0;
 var computerScore = 0;
 const userScore_span = document.getElementById('user-score');
-const computerScore_span = document.getElementById('computer-score');
+const computerScore_span = document.getElementById('comp-score');
 const scoreBoard_div = document.querySelector('.score-board');
 const result_p = document.querySelector('.result > p');
 const rock_div = document.getElementById('rock');
@@ -14,23 +14,25 @@ function getComputerChoice() {
   return choices[randomNumber];
 }
 
-function win(user, computer) {
+function win(userChoice, computerChoice) {
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
-  result_div.innerHTML = user + 'beats ' + computer '. You Win!';
+  result_p.innerHTML = userChoice + ' beats ' + computerChoice + ' (comp) ' + '. You Win!';
 }
 
-function lose(user, computer) {
+function lose(userChoice, computerChoice) {
   computerScore++;
-  computerScore_span.innerHTML = computerScore;
   userScore_span.innerHTML = userScore;
-  result_div.innerHTML = computer + 'beats ' + user '. You Lose!';
-
+  computerScore_span.innerHTML = computerScore;
+  result_p.innerHTML = computerChoice + ' (comp) ' + ' beats ' + userChoice + '. You Lost!';
 }
 
-function draw(user, computer) {
-
+function draw(userChoice, computerChoice) {
+  computerScore++;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+  result_p.innerHTML = computerChoice + ' (comp) ' + ' beats ' + userChoice + '. You Lost!';
 }
 
 function game(userChoice) {
