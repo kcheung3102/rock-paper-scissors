@@ -2,4 +2,4 @@
 
 
 
-A rock paper scissors app made from HTML, CCS and  Vanllia Javascript
+A rock paper scissors app made from HTML, CCS and  Vanilla Javascript
